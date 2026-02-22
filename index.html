@@ -99,14 +99,19 @@
                     </button>
                 </div>
             </div>
-            
+
             <!-- Mobile Menu content (Hidden by default) -->
-            <div class="hidden md:hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-t border-slate-100 dark:border-slate-800/50 absolute left-0 right-0 top-20 shadow-xl transition-all duration-300 ease-in-out" id="mobile-menu">
+            <div class="hidden md:hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-t border-slate-100 dark:border-slate-800/50 absolute left-0 right-0 top-20 shadow-xl transition-all duration-300 ease-in-out"
+                id="mobile-menu">
                 <div class="px-4 pt-6 pb-8 space-y-4 flex flex-col items-center">
-                    <a href="#tratamientos" class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary block px-3 py-3 rounded-xl text-lg font-medium w-full text-center hover:bg-primary/5 transition-all">Tratamientos</a>
-                    <a href="#equipo" class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary block px-3 py-3 rounded-xl text-lg font-medium w-full text-center hover:bg-primary/5 transition-all">Equipo</a>
-                    <a href="#testimonios" class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary block px-3 py-3 rounded-xl text-lg font-medium w-full text-center hover:bg-primary/5 transition-all">Testimonios</a>
-                    <button id="mobile-open-modal-btn" class="w-full mt-4 bg-slate-900 dark:bg-slate-800 text-white hover:bg-primary hover:text-black dark:hover:bg-primary dark:hover:text-black px-5 py-4 rounded-xl text-lg font-bold transition-all duration-300 shadow-lg hover:shadow-primary/30 active:scale-95">
+                    <a href="#tratamientos"
+                        class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary block px-3 py-3 rounded-xl text-lg font-medium w-full text-center hover:bg-primary/5 transition-all">Tratamientos</a>
+                    <a href="#equipo"
+                        class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary block px-3 py-3 rounded-xl text-lg font-medium w-full text-center hover:bg-primary/5 transition-all">Equipo</a>
+                    <a href="#testimonios"
+                        class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary block px-3 py-3 rounded-xl text-lg font-medium w-full text-center hover:bg-primary/5 transition-all">Testimonios</a>
+                    <button id="mobile-open-modal-btn"
+                        class="w-full mt-4 bg-slate-900 dark:bg-slate-800 text-white hover:bg-primary hover:text-black dark:hover:bg-primary dark:hover:text-black px-5 py-4 rounded-xl text-lg font-bold transition-all duration-300 shadow-lg hover:shadow-primary/30 active:scale-95">
                         Reservar Cita
                     </button>
                 </div>
@@ -828,6 +833,9 @@
             <p class="text-slate-500 text-sm flex flex-col md:flex-row gap-2 md:gap-6 items-center">
                 <span>© 2026 Lumina Dental. Todos los derechos reservados.</span>
                 <span class="text-slate-400">Nº Colegiado: 28001234 (Dr. Menéndez)</span>
+                <span class="text-slate-500 text-xs">Desarrollado por <a href="https://barrio-design-web.vercel.app/"
+                        target="_blank" style="color:inherit; text-decoration:underline; cursor:pointer;">Javier
+                        Barrio</a></span>
             </p>
         </div>
     </footer>
@@ -1134,7 +1142,7 @@
                 const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
                 mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
                 mobileMenu.classList.toggle('hidden');
-                
+
                 // Toggle icon
                 const icon = mobileMenuBtn.querySelector('.material-icons');
                 if (icon) {
@@ -1151,13 +1159,13 @@
                     if (icon) icon.textContent = 'menu';
                 });
             });
-            
+
             // Handle mobile modal button
-             if (mobileModalBtn) {
+            if (mobileModalBtn) {
                 mobileModalBtn.addEventListener('click', (e) => {
                     e.preventDefault();
                     mobileMenu.classList.add('hidden'); // Close menu first
-                     mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                    mobileMenuBtn.setAttribute('aria-expanded', 'false');
                     const icon = mobileMenuBtn.querySelector('.material-icons');
                     if (icon) icon.textContent = 'menu';
                     openModal(); // Function from the scope above
