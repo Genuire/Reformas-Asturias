@@ -67,7 +67,8 @@
     <style>
         #twin-chat-bubble {
             position: fixed;
-            bottom: 90px;
+            top: 100px;
+            /* Debajo de la navbar (80px) */
             right: 24px;
             z-index: 9999;
             display: flex;
@@ -170,13 +171,14 @@
     </style>
 
     <div id="twin-chat-bubble">
-        <iframe id="twin-chat-iframe" src="https://builder.twin.so/interface/019c9f03-5ec3-76e1-a5e7-20de9b46f404"
-            title="Asistente LuminaDental"></iframe>
+        <!-- El botón ahora arriba para que el chat se desplace hacia abajo -->
         <button id="twin-chat-btn" aria-label="Abrir chat">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z" />
             </svg>
         </button>
+        <iframe id="twin-chat-iframe" src="https://builder.twin.so/interface/019c9f03-5ec3-76e1-a5e7-20de9b46f404"
+            title="Asistente LuminaDental"></iframe>
     </div>
 
     <script>
@@ -289,7 +291,7 @@
 
                     <!-- HTML5 Video Background -->
                     <!-- Removed 'loop' attribute, added ID for JS control -->
-                    <video id="hero-video" autoplay muted playsinline
+                    <video id="hero-video" autoplay muted playsinline loop
                         class="absolute inset-0 w-full h-full object-cover opacity-90 transition-opacity duration-500 transform scale-105 group-hover:scale-100 transition-transform duration-1000">
                         <source src="0211.webm" type="video/webm">
                         Tu navegador no soporta video HTML5.
@@ -977,22 +979,10 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Video Control Logic
+            // Video Control Logic - Back to continuous loop
             const video = document.getElementById('hero-video');
-
-            let playCount = 1; // It starts playing immediately due to 'autoplay'
-            const maxPlays = 2; // Limit to 2 plays total
-
-            // Handle Video End
-            video.addEventListener('ended', () => {
-                if (playCount < maxPlays) {
-                    playCount++;
-                    video.play();
-                } else {
-                    // Just stay on the last frame or could fade out.
-                    // For now, we just don't restart.
-                }
-            });
+            video.loop = true;
+            video.play();
         });
     </script>
 </body>
