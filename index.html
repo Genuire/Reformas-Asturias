@@ -159,13 +159,17 @@
 
         @media (max-width: 480px) {
             #twin-chat-bubble {
-                bottom: 168px; /* Apilado sobre el botón de llamada */
-                right: 24px;
+                top: auto;
+                bottom: 168px; /* Mantener sobre el botón de llamada */
+                right: 16px;
+                align-items: flex-end;
             }
 
             #twin-chat-iframe {
-                width: calc(100vw - 24px);
-                height: 70vh;
+                width: calc(100vw - 32px);
+                height: 65vh;
+                max-height: 520px;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
             }
         }
     </style>
