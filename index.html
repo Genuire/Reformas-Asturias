@@ -178,19 +178,17 @@
             </svg>
         </button>
         <iframe id="twin-chat-iframe" src="https://builder.twin.so/interface/019c9f03-5ec3-76e1-a5e7-20de9b46f404"
-            title="Asistente LuminaDental"></iframe>
+            title="Asistente LuminaDental" class="hidden"></iframe>
     </div>
 
     <script>
             (function () {
                 const btn = document.getElementById('twin-chat-btn');
                 const iframe = document.getElementById('twin-chat-iframe');
-                let isOpen = true;
-
                 const iconChat = '<path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>';
                 const iconClose = '<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>';
 
-                btn.querySelector('svg').innerHTML = iconClose;
+                btn.querySelector('svg').innerHTML = iconChat;
 
                 btn.addEventListener('click', function () {
                     isOpen = !isOpen;
@@ -826,7 +824,7 @@
                             </div>
                             <h2
                                 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white leading-tight mb-4">
-                                Estamos en el corazón <br>de Madrid.
+                                Centro de referencia <br>en Madrid.
                             </h2>
                             <p class="text-lg text-slate-500 dark:text-slate-400">
                                 Visítanos en nuestra clínica boutique. Un espacio diseñado para tu confort con la
@@ -844,8 +842,7 @@
                                 <div>
                                     <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wide mb-1">Dirección
                                     </h4>
-                                    <p class="text-lg font-medium text-slate-900 dark:text-white">Av. del Futuro 88,
-                                        Edificio Innova, Madrid</p>
+                                    <p class="text-lg font-medium text-slate-900 dark:text-white">Paseo de la Castellana 100, 28046 Madrid</p>
                                 </div>
                             </div>
 
@@ -903,18 +900,40 @@
                     </div>
 
                     <!-- Map Container -->
-                    <div
-                        class="relative h-[400px] w-full bg-slate-100 rounded-[2rem] shadow-xl overflow-hidden border-4 border-white dark:border-slate-800">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d194348.1398106263!2d-3.819620677531477!3d40.43786975924905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422997800a3c81%3A0xc436dec1618c2269!2sMadrid!5e0!3m2!1ses!2ses!4v1707694000000!5m2!1ses!2ses"
-                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade" class="transition-all duration-500">
+                        <!-- Google Maps Real Location (Madrid) -->
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3036.0682181559!2d-3.69176162341!3d40.451996171107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4228e2370aeac1%3A0xc3f8e5b871ed820!2sPaseo%20de%20la%20Castellana%2C%20100%2C%2028046%20Madrid!5e0!3m2!1ses!2ses!4v1707694000000!5m2!1ses!2ses" 
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="transition-all duration-500 opacity-90 hover:opacity-100">
                         </iframe>
+                        
+                        <!-- Overlay Hint -->
+                        <div class="absolute top-6 left-1/2 -translate-x-1/2 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-primary/20 backdrop-blur-sm px-4 py-2 rounded-full border border-primary/20 text-background-dark text-[10px] font-bold tracking-widest uppercase">
+                            Mapa Real Interactivo
+                        </div>
 
-
+                        <div class="absolute bottom-6 right-6">
+                            <a href="https://www.google.com/maps?q=Paseo+de+la+Castellana+100,+Madrid" target="_blank"
+                                class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-background-dark text-xs font-bold rounded-xl shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-all">
+                                <span class="material-icons text-sm">directions</span>
+                                ¿CÓMO LLEGAR?
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>
+
+            <!-- Floating Call Button -->
+            <a href="tel:+34676962324"
+                class="fixed bottom-24 right-6 w-14 h-14 bg-[#dc2626] rounded-full shadow-[0_4px_20px_rgba(220,38,38,0.4)] flex items-center justify-center text-white z-50 hover:scale-110 transition-transform duration-300 group"
+                title="Llamar directamente">
+                <span class="material-icons text-2xl">phone</span>
+                
+                <!-- Tooltip floating on hover -->
+                <span
+                    class="absolute right-full mr-4 bg-white dark:bg-slate-800 text-slate-800 dark:text-white text-xs font-bold py-2 px-4 rounded-xl shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                    Llamar ahora
+                </span>
+            </a>
 
             <!-- Floating WhatsApp Button -->
             <a href="https://wa.me/34676962324" target="_blank"
