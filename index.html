@@ -522,9 +522,17 @@
                     <p class="text-slate-500 dark:text-slate-400 mt-4 px-4">Utiliza nuestro visor 3D para navegar por las fotos de nuestras reformas más recientes. Haz scroll o arrastra el ratón.</p>
                 </div>
 
-                <div class="relative w-full aspect-video max-w-5xl mx-auto rounded-[3rem] overflow-hidden border border-slate-100 dark:border-slate-800 shadow-2xl bg-white">
+                <div class="relative w-full aspect-video max-w-5xl mx-auto rounded-[3rem] overflow-hidden border border-slate-100 dark:border-slate-800 shadow-2xl bg-white group/spline">
                     <iframe src="https://my.spline.design/3dcarouselcopycopy-1tZSUIuGloYFzOnY8TyVCc0s-62G/" 
                         frameborder="0" width="100%" height="100%" class="w-full h-full scale-[1.02] origin-center"></iframe>
+                    
+                    <!-- Overlay para tapar logo de Spline con Logo Propio -->
+                    <div class="absolute bottom-4 right-4 z-10 flex items-center gap-2 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-xl border border-slate-100 shadow-sm pointer-events-none">
+                        <div class="w-6 h-6 rounded bg-primary flex items-center justify-center text-background-dark shadow-sm">
+                            <span class="material-icons text-sm">home_repair_service</span>
+                        </div>
+                        <span class="font-bold text-[10px] tracking-tight text-slate-900 uppercase">Astur<span class="font-light">Reformas</span></span>
+                    </div>
                 </div>
             </section>
 
